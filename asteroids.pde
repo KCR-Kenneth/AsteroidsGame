@@ -15,11 +15,10 @@ void setup() {
 }
 
 void draw() {
-  System.out.println(direction);
   background(0);
   translate(250,250,0);
   MC.show();
-  if (rotating){
+  /*if (rotating){
     if (direction == 0) {
       if (oldD == 3) {
         orient += PI/240;
@@ -58,7 +57,7 @@ void draw() {
     
     rotateY(orient);
     translate(MC.getX(), MC.getY(), MC.getZ());
-  } else {
+  } else */{
     orient = PI/2*direction;
     rotateY(orient);
     translate(MC.getX(), MC.getY(), MC.getZ());
@@ -89,7 +88,7 @@ void draw() {
     }
   }
   
-  //decorate();
+  decorate();
 }
 
 void decorate() {
@@ -188,4 +187,5 @@ void cylinder(float top, float bottom, float h, int sides)
   
   popMatrix();
 }
+
 
