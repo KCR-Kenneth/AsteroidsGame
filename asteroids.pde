@@ -89,7 +89,7 @@ void draw() {
     }
   }
   
-  decorate();
+  //decorate();
 }
 
 void decorate() {
@@ -188,3 +188,4 @@ void cylinder(float top, float bottom, float h, int sides)
   
   popMatrix();
 }
+
