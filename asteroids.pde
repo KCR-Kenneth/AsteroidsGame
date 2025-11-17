@@ -7,7 +7,7 @@ Spaceship MC = new Spaceship();
 Floater[] ETObjects = new Floater[80];
 
 void setup() {
-  size(2560,1280,P3D);
+  size(1280,640,P3D);
   frameRate(120);
   for (int i = 0; i < ETObjects.length; i++) {
     ETObjects[i] = new Star();
@@ -18,7 +18,7 @@ void draw() {
   //NOTE TO FUTURE KENNETH: System.out.println should NEVER be in Github...
   //System.out.println(direction);
   background(0);
-  translate(1280,640,0);
+  translate(width/2,height/2,0);
   MC.show();
   if (rotating){
     if (direction == 0) {
