@@ -100,7 +100,6 @@ void draw() {
     for (int i = kars.size()-1; i >= 0; i--) {
       kars.get(i).move();
       kars.get(i).checkBoundary();
-      kars.get(i).show();
       if (dist(kars.get(i).getX(), kars.get(i).getY(), kars.get(i).getZ(), MC.getX(), MC.getY(), MC.getZ()) < 100) {
         kars.remove(i);
         pushMatrix();
@@ -214,6 +213,7 @@ void cylinder(float top, float bottom, float h, int sides)
   
   popMatrix();
 }
+
 
 
 
