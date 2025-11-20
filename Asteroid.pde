@@ -4,14 +4,14 @@ class Asteroid extends Floater {
     super(2, PI/64);
     myC = color(100,100,100);
     surfaces = 60;
-    vertex = new float[surfaces][3][3];
+    points = new float[surfaces][3][3];
     //Through surfaces
     for (int i = 0; i < surfaces; i++) {
       //Through planes
       for (int j = 0; j < 3; j++) {
         //Through coordinates
         for (int k = 0; k < 3; k++) {
-          vertex[i][j][k] = (float)(Math.random()*40-20);
+          points[i][j][k] = (float)(Math.random()*40-20);
         }
       }
     }
@@ -45,5 +45,6 @@ class Asteroid extends Floater {
     popMatrix();
   }
 }
+
 
 
