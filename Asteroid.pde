@@ -3,7 +3,7 @@ class Asteroid extends Floater {
   public Asteroid() {
     super(2, PI/64);
     myC = color(100,100,100);
-    surfaces = 60;
+    surfaces = 30;
     points = new float[surfaces][3][3];
     //Through surfaces
     for (int i = 0; i < surfaces; i++) {
@@ -40,11 +40,11 @@ class Asteroid extends Floater {
           }
         endShape(CLOSE);
       }
-      sphere(20);
       noStroke();
     popMatrix();
   }
 }
+
 
 
 
