@@ -1,5 +1,5 @@
 class Asteroid extends Floater {
-  protected float[][][] vertex;
+  protected float[][][] points;
   public Asteroid() {
     super(2, PI/64);
     myC = color(100,100,100);
@@ -33,16 +33,17 @@ class Asteroid extends Floater {
       fill(myC);
       stroke(20);
       //Through surfaces
-      /*for (int i = 0; i < surfaces; i++) {
+      for (int i = 0; i < surfaces; i++) {
         beginShape();
           for (int j = 0; j < 3; j++) {
-            vertex(vertex[i][j][0], vertex[i][j][1], vertex[i][j][2]);
+            vertex(points[i][j][0], points[i][j][1], points[i][j][2]);
           }
         endShape(CLOSE);
-      }*/
+      }
       sphere(20);
       noStroke();
     popMatrix();
   }
 }
+
 
