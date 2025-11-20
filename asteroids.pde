@@ -119,9 +119,9 @@ void decorate() {
   for (int i = 0; i < starman.length; i++) {
     starman[i].show();
   }
-  for (int i = kars.size()-1; i >= 0; i--) {
+  /*for (int i = kars.size()-1; i >= 0; i--) {
     kars.get(i).show();
-  }
+  }*/
   pushMatrix();
     constructGrid(1000);
     rotateY(PI/2);
@@ -214,6 +214,7 @@ void cylinder(float top, float bottom, float h, int sides)
   
   popMatrix();
 }
+
 
 
 
