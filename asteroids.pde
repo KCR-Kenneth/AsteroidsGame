@@ -97,7 +97,7 @@ void draw() {
         direction = 0;
       }
     }
-    /*for (int i = kars.size()-1; i >= 0; i--) {
+    for (int i = kars.size()-1; i >= 0; i--) {
       kars.get(i).move();
       kars.get(i).checkBoundary();
       kars.get(i).show();
@@ -109,7 +109,7 @@ void draw() {
           sphere(100);
         popMatrix();
       }
-    }*/
+    }
   }
   
   decorate();
@@ -214,6 +214,7 @@ void cylinder(float top, float bottom, float h, int sides)
   
   popMatrix();
 }
+
 
 
 
