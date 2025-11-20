@@ -8,7 +8,7 @@ boolean rotating = false;
 float orient = 0;
 Spaceship MC = new Spaceship();
 Star[] starman = new Star[80];
-ArrayList <Asteroid> kars = new ArrayList <Asteroid>();
+//ArrayList <Asteroid> kars = new ArrayList <Asteroid>();
 
 void setup() {
   size(1280,640,P3D);
@@ -16,9 +16,9 @@ void setup() {
   for (int i = 0; i < starman.length; i++) {
     starman[i] = new Star();
   }
-  for (int i = 0; i < 100; i++) {
+  /*for (int i = 0; i < 100; i++) {
     kars.add(new Asteroid());
-  }
+  }*/
 }
 
 void draw() {
@@ -97,11 +97,11 @@ void draw() {
         direction = 0;
       }
     }
-    for (int i = kars.size()-1; i >= 0; i--) {
+    /*for (int i = kars.size()-1; i >= 0; i--) {
       kars.get(i).move();
       kars.get(i).checkBoundary();
       kars.get(i).show();
-      if (/*dist(kars.get(i).getX(), kars.get(i).getY(), kars.get(i).getZ(), MC.getX(), MC.getY(), MC.getZ()) < 100*/false) {
+      if (dist(kars.get(i).getX(), kars.get(i).getY(), kars.get(i).getZ(), MC.getX(), MC.getY(), MC.getZ()) < 100) {
         kars.remove(i);
         pushMatrix();
           translate(MC.getX(), MC.getY(), MC.getZ());
@@ -109,7 +109,7 @@ void draw() {
           sphere(100);
         popMatrix();
       }
-    }
+    }*/
   }
   
   decorate();
@@ -119,9 +119,9 @@ void decorate() {
   for (int i = 0; i < starman.length; i++) {
     starman[i].show();
   }
-  for (int i = kars.size()-1; i >= 0; i--) {
+  /*for (int i = kars.size()-1; i >= 0; i--) {
     kars.get(i).show();
-  }
+  }*/
   pushMatrix();
     constructGrid(1000);
     rotateY(PI/2);
@@ -214,4 +214,5 @@ void cylinder(float top, float bottom, float h, int sides)
   
   popMatrix();
 }
+
 
