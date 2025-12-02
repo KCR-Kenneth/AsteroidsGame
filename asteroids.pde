@@ -16,7 +16,7 @@ void setup() {
   for (int i = 0; i < starman.length; i++) {
     starman[i] = new Star();
   }
-  for (int i = 0; i < 100; i++) {
+  for (int i = 0; i < 30; i++) {
     kars.add(new Asteroid());
   }
 }
@@ -213,7 +213,6 @@ void cylinder(float top, float bottom, float h, int sides)
   
   popMatrix();
 }
-
 
 
 
