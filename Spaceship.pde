@@ -20,17 +20,6 @@ class Spaceship extends Floater {
     myZ += zActual[direction];
   }
   
-  public void reAxis() {
-    xActual[0] = xV;
-    xActual[1] = -zV; 
-    xActual[2] = -xV; 
-    xActual[3] = zV;
-    zActual[0] = zV;
-    zActual[1] = xV; 
-    zActual[2] = -zV; 
-    zActual[3] = -xV;
-  }
-  
   public void turn() {
     if (keyPressed) {
       if (key == 'a') {
