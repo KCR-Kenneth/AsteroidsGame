@@ -1,6 +1,3 @@
-//TASKS: Make max speed of rotation and velocity be instantiated
-/// in Constructors for SUPERCLASS
-
 int direction = 0;
 int oldD;
 int tic = 0;
@@ -9,6 +6,7 @@ float orient = 0;
 Spaceship MC = new Spaceship();
 Star[] starman = new Star[80];
 ArrayList <Asteroid> kars = new ArrayList <Asteroid>();
+ArrayList <Bullet> france = new ArrayList <Bullet>();
 
 void setup() {
   size(1280,640,P3D);
@@ -22,9 +20,27 @@ void setup() {
 }
 
 void draw() {
-  //System.out.println(direction);
-  background(0);
   translate(width/2,height/2,0);
+  translate(0,0,-400);
+  int x,y;
+  if (mouseX < width/2-50) {
+    x = width/2-50;
+  } else if (mouseX > width/2+50) {
+    x = width/2+50;
+  } else {
+    x = mouseX;
+  }
+  if (mouseY < height/2-50) {
+    y = height/2-50;
+  } else if (mouseY > height/2+50) {
+    y = height/2+50;
+  } else {
+    y = mouseY;
+  }
+  rotateX(-(y-height/2)*PI/1500);
+  rotateY((x-width/2)*PI/500);
+  
+  background(0);
   MC.show();
   if (rotating){
     if (direction == 0) {
@@ -96,18 +112,38 @@ void draw() {
       } else if (direction > 3) {
         direction = 0;
       }
+      if (key == ' ') {
+        france.add(new Bullet());
+      }
     }
     for (int i = kars.size()-1; i >= 0; i--) {
       kars.get(i).move();
       kars.get(i).checkBoundary();
       if (dist(kars.get(i).getX(), kars.get(i).getY(), kars.get(i).getZ(), MC.getX(), MC.getY(), MC.getZ()) < 100) {
-        kars.remove(i);
         pushMatrix();
           translate(MC.getX(), MC.getY(), MC.getZ());
           fill(256,0,0);
           sphere(100);
         popMatrix();
+        kars.remove(i);
+      } else {
+        for (int j = 0; j < france.size(); j++) {
+          if (dist(kars.get(i).getX(), kars.get(i).getY(), kars.get(i).getZ(), france.get(j).getX(), france.get(j).getY(), france.get(j).getZ()) < 100) {
+            pushMatrix();
+              translate(france.get(j).getX(), france.get(j).getY(), france.get(j).getZ());
+              fill(256,0,0);
+              sphere(100);
+            popMatrix();
+            kars.remove(i);
+          }
+        }
       }
+    }
+    for (int i = france.size()-1; i >= 0; i--) {
+      france.get(i).reAxis();
+      france.get(i).move();
+      france.get(i).show();
+      france.get(i).checkBoundary(i);
     }
   }
   
@@ -213,9 +249,3 @@ void cylinder(float top, float bottom, float h, int sides)
   
   popMatrix();
 }
-
-
-
-
-
-
